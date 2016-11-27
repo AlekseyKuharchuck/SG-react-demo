@@ -8,15 +8,15 @@ const initialState = {
   friendsById: {
     1: {
       id: 1,
-      name: 'Theodore Roosevelt'
+      name: 'name1'
     },
     2: {
       id: 2,
-      name: 'Abraham Lincoln'
+      name: 'name2'
     },
     3: {
       id: 3,
-      name: 'George Washington'
+      name: 'name3'
     }
   }
 };
