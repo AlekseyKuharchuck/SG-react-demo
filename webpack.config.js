@@ -1,6 +1,10 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var devFlagPlugin = new webpack.DefinePlugin({
+  __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
+});
+
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
@@ -13,7 +17,9 @@ module.exports = {
     publicPath: '/static/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+    devFlagPlugin
   ],
   module: {
     loaders: [{
